@@ -40,12 +40,14 @@ for (int i = 0; i < len - 1; i++) {
       par++;
       res = true;
       break;
-    } else
+    } else {
       if (arr[mid] > value - arr[i]) {
         r = mid - 1;
-      } else
+      }
+      } else {
         if (arr[mid] < value - arr[i]) {
           l = mid + 1;
+        }
         }
       mid = (l + l) / 2;
   }

@@ -36,7 +36,7 @@ for (int i = 0; i < len - 1; i++) {
   int l = i + 1;
   int mid = (l + r) / 2;
   while (l <= r) {
-    if (arr[mid] == value - arr[i]) {
+    if (arr[i] + arr[mid] == value) {
       par++;
       res = true;
       break;
@@ -45,7 +45,7 @@ for (int i = 0; i < len - 1; i++) {
     } else if (arr[mid] < value - arr[i]) {
       l = mid + 1;
     }
-    mid = (l + l) / 2;
+    mid = (l + r) / 2;
   }
   int cur1 = mid;
   int cur2 = mid;

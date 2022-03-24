@@ -12,25 +12,20 @@ return par;
 return 0;
 }
 int countPairs2(int *arr, int len, int value) {
-int l = 0;
-int r = len-1;
 int par = 0;
-for (int i = len - 1; i > 0; i--) {
-  if (value == arr[i]) {
+int r;
+for (int i = len - 1; i >= 0; i--) {
+  if (arr[i] == value) {
     r = i;
     break;
-  }
-}
-for (int i = l; i < len; i++) {
-  if (arr[i] > value / 2) {
-    break;
-  }
-  for (int j = r; j > i; j--) {
-    if (arr[i] + arr[j] == value) {
-                par++;
+  } else {
+      continue;
     }
-    if (arr[i] + arr[j] < value) {
-      break;
+  }
+for (int i = 0; i < r - 1; i++) {
+  for (int j = r; j >= i + 1; j--) {
+    if (arr[i] + arr[j] == value) {
+      par++;
     }
   }
 }

@@ -17,13 +17,19 @@ int r = len-1;
 int par = 0;
 for (int i = len - 1; i > 0; i--) {
   if (value == arr[i]) {
-    r = i;
+    r--;
   }
 }
-for (int i = l; i < len - 1; i++) {
-  for (int j = r; j > i - 1; j--) {
+for (int i = l; i < len; i++) {
+  if (arr[i] > value / 2) {
+    break;
+  }
+  for (int j = r; j > i; j--) {
     if (arr[i] + arr[j] == value) {
                 par++;
+    }
+    if (arr[i] + arr[j] < value) {
+      break;
     }
   }
 }

@@ -17,7 +17,8 @@ int r = len-1;
 int par = 0;
 for (int i = len - 1; i > 0; i--) {
   if (value == arr[i]) {
-    r--;
+    r = i;
+    break;
   }
 }
 for (int i = l; i < len; i++) {

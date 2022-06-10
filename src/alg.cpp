@@ -9,23 +9,23 @@ for (int i = 0; i < len - 1; i++) {
 }
 return par;
 }
-int countPairs2(int* arr, int len, int value) {
-  int counter = 0;
-  int last = len;
-  int rig = len - 1;
-  for (int last = len - 1; arr[last] > value; last--) rig--;
-  for (int i = 0; i <= len; i++) {
-    if (arr[i] > value / 2) break;
-    for (int j = rig; j > i; j--) {
-      if (arr[i] + arr[j] == value) {
-        counter++;
-      }
-      if (arr[i] + arr[j] < value) break;
+int countPairs2(int *arr, int len, int value) {
+int par = 0;
+int l = len;
+int r = len - 1;
+for (int z = len - 1; arr[l] > value; l--)
+  r--;
+for (int i = 0; i <= len; i++) {
+  if (arr[i] > value / 2)
+    break;
+  for (int j = r; j > i; j--) {
+    if (arr[i] + arr[j] == value) {
+      par++;
     }
+    if (arr[i] + arr[j] < value)
+      break;
   }
-  return counter;
 }
-
 return par;
 }
 int countPairs3(int *arr, int len, int value) {
